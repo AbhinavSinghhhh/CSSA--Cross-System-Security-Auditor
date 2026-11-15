@@ -1,0 +1,193 @@
+{
+  "system_info": {
+    "os_name": "Ubuntu 24.04 LTS",
+    "os_version": "24.04",
+    "kernel_version": "6.8.0-45-generic",
+    "architecture": "64-bit",
+    "hostname": "ubuntu-lab",
+    "current_user": "student",
+    "privilege_level": "sudo-capable",
+    "uptime": "12d 6h 45m",
+    "boot_time": "2024-09-29T02:15:00",
+    "cpu_info": "AMD Ryzen 7 5800X",
+    "cpu_count": 16,
+    "total_memory_gb": 32.0,
+    "available_memory_gb": 24.1,
+    "disk_total_gb": 500.0,
+    "disk_used_gb": 185.2,
+    "disk_free_gb": 314.8,
+    "platform": "linux"
+  },
+  "users": [
+    {
+      "username": "root",
+      "uid": "0",
+      "gid": "0",
+      "groups": ["root"],
+      "is_admin": true,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "/root",
+      "shell": "/bin/bash",
+      "description": "root",
+      "last_login": "2024-10-10T22:00:00"
+    },
+    {
+      "username": "student",
+      "uid": "1000",
+      "gid": "1000",
+      "groups": ["student", "sudo", "adm", "docker"],
+      "is_admin": false,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "/home/student",
+      "shell": "/bin/bash",
+      "description": "Lab Student",
+      "last_login": "2024-10-11T08:30:00"
+    },
+    {
+      "username": "www-data",
+      "uid": "33",
+      "gid": "33",
+      "groups": ["www-data"],
+      "is_admin": false,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "/var/www",
+      "shell": "/usr/sbin/nologin",
+      "description": "Web server user",
+      "last_login": "Unavailable"
+    },
+    {
+      "username": "nobody",
+      "uid": "65534",
+      "gid": "65534",
+      "groups": ["nogroup"],
+      "is_admin": false,
+      "is_disabled": false,
+      "is_guest": true,
+      "home_directory": "/nonexistent",
+      "shell": "/usr/sbin/nologin",
+      "description": "nobody",
+      "last_login": "Unavailable"
+    },
+    {
+      "username": "testuser",
+      "uid": "1001",
+      "gid": "1001",
+      "groups": ["testuser", "sudo"],
+      "is_admin": false,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "/home/testuser",
+      "shell": "/bin/bash",
+      "description": "Unexpected test account — review recommended",
+      "last_login": "2024-09-15T10:00:00"
+    }
+  ],
+  "processes": [
+    {"pid": 1, "name": "systemd", "exe_path": "/lib/systemd/systemd", "cpu_percent": 0.0, "memory_percent": 0.3, "memory_mb": 96.0, "parent_pid": 0, "username": "root", "start_time": "2024-09-29T02:15:00", "status": "sleeping", "cmdline": "/sbin/init"},
+    {"pid": 520, "name": "sshd", "exe_path": "/usr/sbin/sshd", "cpu_percent": 0.0, "memory_percent": 0.1, "memory_mb": 32.0, "parent_pid": 1, "username": "root", "start_time": "2024-09-29T02:15:05", "status": "sleeping", "cmdline": "sshd: /usr/sbin/sshd -D"},
+    {"pid": 890, "name": "nginx", "exe_path": "/usr/sbin/nginx", "cpu_percent": 0.5, "memory_percent": 0.8, "memory_mb": 256.0, "parent_pid": 1, "username": "root", "start_time": "2024-09-29T02:15:10", "status": "sleeping", "cmdline": "nginx: master process /usr/sbin/nginx"},
+    {"pid": 1200, "name": "mysqld", "exe_path": "/usr/sbin/mysqld", "cpu_percent": 3.2, "memory_percent": 4.5, "memory_mb": 1440.0, "parent_pid": 1, "username": "mysql", "start_time": "2024-09-29T02:15:12", "status": "sleeping", "cmdline": "/usr/sbin/mysqld --basedir=/usr"},
+    {"pid": 2500, "name": "python3", "exe_path": "/usr/bin/python3", "cpu_percent": 0.8, "memory_percent": 1.2, "memory_mb": 384.0, "parent_pid": 1, "username": "student", "start_time": "2024-10-11T08:30:15", "status": "sleeping", "cmdline": "python3 app.py"},
+    {"pid": 3100, "name": "bash", "exe_path": "/bin/bash", "cpu_percent": 0.0, "memory_percent": 0.1, "memory_mb": 32.0, "parent_pid": 520, "username": "student", "start_time": "2024-10-11T08:30:00", "status": "sleeping", "cmdline": "-bash"},
+    {"pid": 4200, "name": "docker", "exe_path": "/usr/bin/dockerd", "cpu_percent": 1.5, "memory_percent": 2.0, "memory_mb": 640.0, "parent_pid": 1, "username": "root", "start_time": "2024-09-29T02:15:20", "status": "sleeping", "cmdline": "dockerd --host=fd://"}
+  ],
+  "services": [
+    {"name": "ssh.service", "display_name": "OpenSSH Server", "status": "Running", "startup_type": "Automatic", "description": "OpenSSH server daemon", "executable": "/usr/sbin/sshd", "user": "root"},
+    {"name": "nginx.service", "display_name": "Nginx HTTP Server", "status": "Running", "startup_type": "Automatic", "description": "A high performance web server", "executable": "/usr/sbin/nginx", "user": "root"},
+    {"name": "mysql.service", "display_name": "MySQL Community Server", "status": "Running", "startup_type": "Automatic", "description": "MySQL database server", "executable": "/usr/sbin/mysqld", "user": "mysql"},
+    {"name": "docker.service", "display_name": "Docker Application Container Engine", "status": "Running", "startup_type": "Automatic", "description": "Docker container runtime", "executable": "/usr/bin/dockerd", "user": "root"},
+    {"name": "ufw.service", "display_name": "Uncomplicated Firewall", "status": "Stopped", "startup_type": "Disabled", "description": "Uncomplicated Firewall", "executable": "/lib/systemd/system/ufw.service", "user": "root"},
+    {"name": "cups.service", "display_name": "CUPS Printing Service", "status": "Running", "startup_type": "Automatic", "description": "CUPS printing system", "executable": "/usr/sbin/cupsd", "user": "root"},
+    {"name": "avahi-daemon.service", "display_name": "Avahi mDNS/DNS-SD Stack", "status": "Running", "startup_type": "Automatic", "description": "Avahi mDNS/DNS-SD daemon", "executable": "/usr/sbin/avahi-daemon", "user": "avahi"},
+    {"name": "cron.service", "display_name": "Regular background program processing daemon", "status": "Running", "startup_type": "Automatic", "description": "Cron job scheduler", "executable": "/usr/sbin/cron", "user": "root"}
+  ],
+  "firewall": {
+    "enabled": false,
+    "provider": "UFW (Uncomplicated Firewall)",
+    "profiles": {},
+    "rules_count": 0,
+    "details": "UFW is installed but inactive. No other active firewall detected."
+  },
+  "network_connections": [
+    {"local_address": "0.0.0.0", "local_port": 22, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 520, "process_name": "sshd", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 80, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 890, "process_name": "nginx", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 443, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 890, "process_name": "nginx", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 3306, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 1200, "process_name": "mysqld", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "127.0.0.1", "local_port": 6379, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 1500, "process_name": "redis-server", "exposure": "LOCAL ONLY"},
+    {"local_address": "0.0.0.0", "local_port": 631, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 900, "process_name": "cupsd", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 5353, "protocol": "UDP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 950, "process_name": "avahi-daemon", "exposure": "NETWORK EXPOSED"}
+  ],
+  "file_permissions": [
+    {"path": "/etc/shadow", "owner": "root", "group": "shadow", "permissions": "rw-r-----", "numeric_mode": "640", "is_suid": false, "is_sgid": false, "is_world_writable": false, "risk": "LOW", "reason": "Standard shadow file permissions", "acl_entries": []},
+    {"path": "/tmp/app_config.yml", "owner": "student", "group": "student", "permissions": "rwxrwxrwx", "numeric_mode": "777", "is_suid": false, "is_sgid": false, "is_world_writable": true, "risk": "HIGH", "reason": "Application configuration file is world-writable", "acl_entries": []},
+    {"path": "/etc/cron.d/backup", "owner": "root", "group": "root", "permissions": "rwxrwxrw-", "numeric_mode": "776", "is_suid": false, "is_sgid": false, "is_world_writable": true, "risk": "HIGH", "reason": "Cron configuration file is world-writable", "acl_entries": []},
+    {"path": "/usr/bin/passwd", "owner": "root", "group": "root", "permissions": "rwsr-xr-x", "numeric_mode": "4755", "is_suid": true, "is_sgid": false, "is_world_writable": false, "risk": "INFO", "reason": "Standard SUID binary", "acl_entries": []},
+    {"path": "/usr/local/bin/custom_tool", "owner": "root", "group": "root", "permissions": "rwsr-sr-x", "numeric_mode": "6755", "is_suid": true, "is_sgid": true, "is_world_writable": false, "risk": "MEDIUM", "reason": "Custom SUID/SGID binary — review recommended", "acl_entries": []},
+    {"path": "/var/www/html/uploads", "owner": "www-data", "group": "www-data", "permissions": "rwxrwxrwx", "numeric_mode": "777", "is_suid": false, "is_sgid": false, "is_world_writable": true, "risk": "HIGH", "reason": "Web upload directory is world-writable", "acl_entries": []}
+  ],
+  "startup_entries": [
+    {"name": "ssh.service", "location": "systemd", "command": "/usr/sbin/sshd -D", "user": "root", "enabled": true, "source": "systemd enabled", "risk": "LOW", "description": "OpenSSH server"},
+    {"name": "nginx.service", "location": "systemd", "command": "/usr/sbin/nginx", "user": "root", "enabled": true, "source": "systemd enabled", "risk": "LOW", "description": "Nginx web server"},
+    {"name": "mysql.service", "location": "systemd", "command": "/usr/sbin/mysqld", "user": "mysql", "enabled": true, "source": "systemd enabled", "risk": "LOW", "description": "MySQL database server"},
+    {"name": "cups.service", "location": "systemd", "command": "/usr/sbin/cupsd", "user": "root", "enabled": true, "source": "systemd enabled", "risk": "MEDIUM", "description": "Printing service — may be unnecessary on server"},
+    {"name": "backup_script", "location": "/etc/cron.d/backup", "command": "/opt/scripts/backup.sh", "user": "root", "enabled": true, "source": "cron", "risk": "LOW", "description": "Automated backup cron job"},
+    {"name": "miner_check", "location": "/var/spool/cron/crontabs/student", "command": "/tmp/.hidden/check.sh", "user": "student", "enabled": true, "source": "user cron", "risk": "HIGH", "description": "Suspicious cron entry referencing hidden directory — review recommended"}
+  ],
+  "security_policies": [
+    {"name": "PermitRootLogin", "category": "SSH Configuration", "current_value": "yes", "recommended_value": "no", "compliant": false, "description": "Controls whether root can log in directly via SSH"},
+    {"name": "PasswordAuthentication", "category": "SSH Configuration", "current_value": "yes", "recommended_value": "no", "compliant": false, "description": "Whether password-based SSH authentication is allowed"},
+    {"name": "X11Forwarding", "category": "SSH Configuration", "current_value": "yes", "recommended_value": "no", "compliant": false, "description": "X11 display forwarding over SSH"},
+    {"name": "PASS_MAX_DAYS", "category": "Password Policy", "current_value": "99999", "recommended_value": "90", "compliant": false, "description": "Maximum days between password changes"},
+    {"name": "PASS_MIN_DAYS", "category": "Password Policy", "current_value": "0", "recommended_value": "1", "compliant": false, "description": "Minimum days between password changes"},
+    {"name": "PASS_MIN_LEN", "category": "Password Policy", "current_value": "5", "recommended_value": "12", "compliant": false, "description": "Minimum password length"},
+    {"name": "UMASK", "category": "File Security", "current_value": "022", "recommended_value": "027", "compliant": false, "description": "Default file creation mask"}
+  ],
+  "packet_capture": {
+    "capture_available": true,
+    "capture_source": "Demo Fixture (Wireshark Capture)",
+    "duration_seconds": 10,
+    "total_packets_captured": 98,
+    "details": "Simulated live packet capture stream for Linux server.",
+    "protocols_seen": {
+      "TCP": 60,
+      "UDP": 20,
+      "FTP": 18,
+      "DNS": 12
+    },
+    "threats": [
+      {
+        "id": "pkt-lin-001",
+        "timestamp": "2024-10-10T22:10:02",
+        "threat_type": "PLAINTEXT_AUTH",
+        "protocol": "FTP",
+        "source_ip": "10.0.0.15",
+        "source_port": 42100,
+        "dest_ip": "10.0.0.2",
+        "dest_port": 21,
+        "severity": "CRITICAL",
+        "description": "Cleartext FTP credentials transmitted over the network.",
+        "recommendation": "Replace unencrypted FTP with SFTP (SSH File Transfer Protocol) or FTPS.",
+        "evidence": "FTP USER admin / PASS Secret2024! exchange observed.",
+        "packet_summary": "FTP USER / PASS command exchange"
+      },
+      {
+        "id": "pkt-lin-002",
+        "timestamp": "2024-10-10T22:10:05",
+        "threat_type": "CLEARTEXT_PROTOCOL",
+        "protocol": "FTP",
+        "source_ip": "10.0.0.15",
+        "source_port": 42100,
+        "dest_ip": "10.0.0.2",
+        "dest_port": 21,
+        "severity": "HIGH",
+        "description": "Unencrypted FTP communication active on port 21.",
+        "recommendation": "Transition to SFTP or TLS-encrypted file transfers.",
+        "evidence": "Active connection on port 21",
+        "packet_summary": "TCP 10.0.0.15:42100 -> 10.0.0.2:21"
+      }
+    ]
+  }
+}

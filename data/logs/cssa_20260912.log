@@ -1,0 +1,13 @@
+2026-09-12 20:27:20 | INFO     | root                           | CSSA logging initialized — log file: /Users/abhinavsingh/PROJECT/windows and linux internal/cross_platform_security_auditor/data/logs/cssa_20260912.log
+2026-09-12 20:27:20 | INFO     | core.rule_engine               | Loaded 4 rule(s) from common_rules.json
+2026-09-12 20:27:20 | INFO     | core.rule_engine               | Loaded 5 rule(s) from linux_rules.json
+2026-09-12 20:27:20 | INFO     | core.rule_engine               | Loaded 5 rule(s) from macos_rules.json
+2026-09-12 20:27:20 | INFO     | core.rule_engine               | Loaded 5 rule(s) from windows_rules.json
+2026-09-12 20:27:20 | INFO     | database.db                    | Database initialized at /Users/abhinavsingh/PROJECT/windows and linux internal/cross_platform_security_auditor/data/cssa_audit.db
+2026-09-12 20:27:20 | INFO     | database.db                    | Database initialized at /Users/abhinavsingh/PROJECT/windows and linux internal/cross_platform_security_auditor/data/cssa_audit.db
+2026-09-12 20:27:37 | INFO     | core.auditor                   | Starting audit — mode=REAL SYSTEM
+2026-09-12 20:27:37 | INFO     | core.auditor                   | Audit complete — score=80  risk=Good  findings=8
+2026-09-12 20:27:37 | INFO     | database.db                    | Saved audit 3cbf6e49-a177-454d-a0a2-9970137976d4 to database
+2026-09-12 20:28:14 | INFO     | reports.pdf_report             | Successfully generated basic PDF report via reportlab at /Users/abhinavsingh/PROJECT/windows and linux internal/cross_platform_security_auditor/data/reports/CSSA_Audit_macos_20260912_202814.pdf
+2026-09-12 20:28:32 | INFO     | reports.html_report            | Successfully generated HTML report at /Users/abhinavsingh/PROJECT/windows and linux internal/cross_platform_security_auditor/data/reports/CSSA_Audit_macos_20260912_202832.html
+2026-09-12 20:28:54 | INFO     | reports.html_report            | Successfully generated HTML report at /Users/abhinavsingh/PROJECT/windows and linux internal/cross_platform_security_auditor/data/reports/CSSA_Audit_macos_20260912_202854.html

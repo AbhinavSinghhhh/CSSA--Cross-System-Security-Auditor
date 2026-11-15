@@ -1,0 +1,190 @@
+{
+  "system_info": {
+    "os_name": "Windows 11",
+    "os_version": "10.0.22621",
+    "kernel_version": "NT 10.0.22621",
+    "architecture": "64-bit",
+    "hostname": "LAB-PC-DEMO",
+    "current_user": "student",
+    "privilege_level": "Administrator",
+    "uptime": "3d 14h 22m",
+    "boot_time": "2024-10-08T06:30:00",
+    "cpu_info": "Intel Core i7-12700H",
+    "cpu_count": 14,
+    "total_memory_gb": 16.0,
+    "available_memory_gb": 7.2,
+    "disk_total_gb": 512.0,
+    "disk_used_gb": 310.5,
+    "disk_free_gb": 201.5,
+    "platform": "windows"
+  },
+  "users": [
+    {
+      "username": "Administrator",
+      "uid": "500",
+      "gid": "544",
+      "groups": ["Administrators"],
+      "is_admin": true,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "C:\\Users\\Administrator",
+      "shell": "",
+      "description": "Built-in account for administering the computer",
+      "last_login": "2024-10-10T08:15:00"
+    },
+    {
+      "username": "Guest",
+      "uid": "501",
+      "gid": "546",
+      "groups": ["Guests"],
+      "is_admin": false,
+      "is_disabled": false,
+      "is_guest": true,
+      "home_directory": "C:\\Users\\Guest",
+      "shell": "",
+      "description": "Built-in account for guest access",
+      "last_login": "Unavailable"
+    },
+    {
+      "username": "student",
+      "uid": "1001",
+      "gid": "545",
+      "groups": ["Administrators", "Users", "Remote Desktop Users"],
+      "is_admin": true,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "C:\\Users\\student",
+      "shell": "",
+      "description": "Lab student account",
+      "last_login": "2024-10-11T09:00:00"
+    },
+    {
+      "username": "svc_backup",
+      "uid": "1002",
+      "gid": "545",
+      "groups": ["Administrators", "Backup Operators"],
+      "is_admin": true,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "C:\\Users\\svc_backup",
+      "shell": "",
+      "description": "Backup service account",
+      "last_login": "2024-10-09T03:00:00"
+    },
+    {
+      "username": "test_user",
+      "uid": "1003",
+      "gid": "545",
+      "groups": ["Users"],
+      "is_admin": false,
+      "is_disabled": true,
+      "is_guest": false,
+      "home_directory": "C:\\Users\\test_user",
+      "shell": "",
+      "description": "Test account — review recommended",
+      "last_login": "2024-08-01T12:00:00"
+    }
+  ],
+  "processes": [
+    {"pid": 4, "name": "System", "exe_path": "", "cpu_percent": 0.1, "memory_percent": 0.2, "memory_mb": 32.0, "parent_pid": 0, "username": "NT AUTHORITY\\SYSTEM", "start_time": "2024-10-08T06:30:00", "status": "running", "cmdline": ""},
+    {"pid": 512, "name": "csrss.exe", "exe_path": "C:\\Windows\\System32\\csrss.exe", "cpu_percent": 0.3, "memory_percent": 0.5, "memory_mb": 80.0, "parent_pid": 4, "username": "NT AUTHORITY\\SYSTEM", "start_time": "2024-10-08T06:30:01", "status": "running", "cmdline": ""},
+    {"pid": 780, "name": "svchost.exe", "exe_path": "C:\\Windows\\System32\\svchost.exe", "cpu_percent": 1.2, "memory_percent": 2.1, "memory_mb": 336.0, "parent_pid": 4, "username": "NT AUTHORITY\\SYSTEM", "start_time": "2024-10-08T06:30:05", "status": "running", "cmdline": "svchost.exe -k netsvcs"},
+    {"pid": 1320, "name": "explorer.exe", "exe_path": "C:\\Windows\\explorer.exe", "cpu_percent": 3.5, "memory_percent": 4.8, "memory_mb": 768.0, "parent_pid": 780, "username": "student", "start_time": "2024-10-08T06:31:00", "status": "running", "cmdline": "C:\\Windows\\explorer.exe"},
+    {"pid": 2044, "name": "chrome.exe", "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "cpu_percent": 12.4, "memory_percent": 8.2, "memory_mb": 1312.0, "parent_pid": 1320, "username": "student", "start_time": "2024-10-11T09:05:00", "status": "running", "cmdline": ""},
+    {"pid": 3456, "name": "mysqld.exe", "exe_path": "C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqld.exe", "cpu_percent": 2.1, "memory_percent": 5.5, "memory_mb": 880.0, "parent_pid": 780, "username": "NT AUTHORITY\\NETWORK SERVICE", "start_time": "2024-10-08T06:31:30", "status": "running", "cmdline": "mysqld --defaults-file=my.ini"},
+    {"pid": 5678, "name": "suspicious_update.exe", "exe_path": "C:\\Users\\student\\AppData\\Local\\Temp\\suspicious_update.exe", "cpu_percent": 87.5, "memory_percent": 22.3, "memory_mb": 3568.0, "parent_pid": 1320, "username": "student", "start_time": "2024-10-11T09:10:00", "status": "running", "cmdline": "suspicious_update.exe --background"}
+  ],
+  "services": [
+    {"name": "wuauserv", "display_name": "Windows Update", "status": "Running", "startup_type": "Automatic", "description": "Windows Update service", "executable": "C:\\Windows\\System32\\svchost.exe -k netsvcs", "user": "LocalSystem"},
+    {"name": "W3SVC", "display_name": "World Wide Web Publishing Service", "status": "Running", "startup_type": "Automatic", "description": "Web server service", "executable": "C:\\Windows\\System32\\svchost.exe", "user": "LocalSystem"},
+    {"name": "MSSQLSERVER", "display_name": "SQL Server (MSSQLSERVER)", "status": "Running", "startup_type": "Automatic", "description": "SQL Server database engine", "executable": "C:\\Program Files\\Microsoft SQL Server\\MSSQL16\\MSSQL\\Binn\\sqlservr.exe", "user": "NT Service\\MSSQLSERVER"},
+    {"name": "tlntsvr", "display_name": "Telnet", "status": "Running", "startup_type": "Automatic", "description": "Telnet server - insecure remote access", "executable": "C:\\Windows\\System32\\tlntsvr.exe", "user": "LocalSystem"},
+    {"name": "ftpsvc", "display_name": "Microsoft FTP Service", "status": "Running", "startup_type": "Automatic", "description": "FTP file transfer service", "executable": "C:\\Windows\\System32\\svchost.exe", "user": "LocalSystem"},
+    {"name": "WinRM", "display_name": "Windows Remote Management", "status": "Running", "startup_type": "Automatic", "description": "WinRM service", "executable": "C:\\Windows\\System32\\svchost.exe", "user": "NT AUTHORITY\\NetworkService"},
+    {"name": "Spooler", "display_name": "Print Spooler", "status": "Running", "startup_type": "Automatic", "description": "Manages print jobs", "executable": "C:\\Windows\\System32\\spoolsv.exe", "user": "LocalSystem"},
+    {"name": "WSearch", "display_name": "Windows Search", "status": "Stopped", "startup_type": "Disabled", "description": "Content indexing", "executable": "C:\\Windows\\System32\\SearchIndexer.exe", "user": "LocalSystem"}
+  ],
+  "firewall": {
+    "enabled": false,
+    "provider": "Windows Defender Firewall",
+    "profiles": {"Domain": false, "Private": false, "Public": false},
+    "rules_count": 245,
+    "details": "All firewall profiles are disabled"
+  },
+  "network_connections": [
+    {"local_address": "0.0.0.0", "local_port": 23, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 1024, "process_name": "tlntsvr.exe", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 21, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 1025, "process_name": "ftpsvc", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 80, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 4, "process_name": "System", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 443, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 4, "process_name": "System", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 3306, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 3456, "process_name": "mysqld.exe", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 1433, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 2200, "process_name": "sqlservr.exe", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "127.0.0.1", "local_port": 5985, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 4, "process_name": "System", "exposure": "LOCAL ONLY"},
+    {"local_address": "0.0.0.0", "local_port": 3389, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 1100, "process_name": "TermService", "exposure": "NETWORK EXPOSED"}
+  ],
+  "file_permissions": [
+    {"path": "C:\\Users\\Public\\Documents\\sensitive_data.xlsx", "owner": "student", "group": "Users", "permissions": "Everyone:(F)", "numeric_mode": "", "is_suid": false, "is_sgid": false, "is_world_writable": true, "risk": "HIGH", "reason": "Sensitive file accessible by Everyone with Full Control", "acl_entries": [{"identity": "Everyone", "access": "Full Control", "type": "Allow"}]},
+    {"path": "C:\\ProgramData\\AppConfig\\settings.ini", "owner": "SYSTEM", "group": "Administrators", "permissions": "Everyone:(M)", "numeric_mode": "", "is_suid": false, "is_sgid": false, "is_world_writable": true, "risk": "MEDIUM", "reason": "Configuration file modifiable by Everyone", "acl_entries": [{"identity": "Everyone", "access": "Modify", "type": "Allow"}]},
+    {"path": "C:\\Windows\\System32\\cmd.exe", "owner": "TrustedInstaller", "group": "Administrators", "permissions": "Administrators:(F) Users:(RX)", "numeric_mode": "", "is_suid": false, "is_sgid": false, "is_world_writable": false, "risk": "LOW", "reason": "Standard system binary permissions", "acl_entries": []}
+  ],
+  "startup_entries": [
+    {"name": "SecurityHealthSystray", "location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "command": "C:\\Windows\\System32\\SecurityHealthSystray.exe", "user": "All Users", "enabled": true, "source": "Registry Run Key", "risk": "LOW", "description": "Windows Security notification icon"},
+    {"name": "SuspiciousUpdater", "location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "command": "C:\\Users\\student\\AppData\\Local\\Temp\\updater.exe --silent", "user": "student", "enabled": true, "source": "Registry Run Key", "risk": "HIGH", "description": "Unknown executable in Temp directory — review recommended"},
+    {"name": "OneDrive", "location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "command": "C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe /background", "user": "student", "enabled": true, "source": "Registry Run Key", "risk": "LOW", "description": "Microsoft OneDrive sync client"},
+    {"name": "MiningHelper", "location": "Task Scheduler", "command": "C:\\Users\\student\\AppData\\Roaming\\helper\\mine.exe", "user": "student", "enabled": true, "source": "Scheduled Task", "risk": "HIGH", "description": "Unknown scheduled task in AppData — review recommended"}
+  ],
+  "security_policies": [
+    {"name": "MinimumPasswordLength", "category": "Password Policy", "current_value": "6", "recommended_value": "14", "compliant": false, "description": "Minimum number of characters for user passwords"},
+    {"name": "MaximumPasswordAge", "category": "Password Policy", "current_value": "0", "recommended_value": "90", "compliant": false, "description": "Maximum days before password must be changed (0 = never expires)"},
+    {"name": "AccountLockoutThreshold", "category": "Account Lockout", "current_value": "0", "recommended_value": "5", "compliant": false, "description": "Failed login attempts before lockout (0 = never locks)"},
+    {"name": "AccountLockoutDuration", "category": "Account Lockout", "current_value": "0", "recommended_value": "30", "compliant": false, "description": "Minutes account remains locked"},
+    {"name": "PasswordComplexity", "category": "Password Policy", "current_value": "Disabled", "recommended_value": "Enabled", "compliant": false, "description": "Require complex passwords"},
+    {"name": "AuditLogonEvents", "category": "Audit Policy", "current_value": "No Auditing", "recommended_value": "Success, Failure", "compliant": false, "description": "Audit successful and failed logon attempts"}
+  ],
+  "packet_capture": {
+    "capture_available": true,
+    "capture_source": "Demo Fixture (Wireshark Capture)",
+    "duration_seconds": 10,
+    "total_packets_captured": 142,
+    "details": "Simulated live packet capture stream for Windows workstation.",
+    "protocols_seen": {
+      "TCP": 84,
+      "UDP": 42,
+      "HTTP": 24,
+      "LLMNR": 12,
+      "TLS": 36,
+      "DNS": 10
+    },
+    "threats": [
+      {
+        "id": "pkt-win-001",
+        "timestamp": "2024-10-10T12:05:01",
+        "threat_type": "PLAINTEXT_AUTH",
+        "protocol": "HTTP",
+        "source_ip": "192.168.1.105",
+        "source_port": 49210,
+        "dest_ip": "192.168.1.50",
+        "dest_port": 80,
+        "severity": "CRITICAL",
+        "description": "Cleartext HTTP Basic Authentication header detected in transit.",
+        "recommendation": "Migrate web services to HTTPS and disable unencrypted Basic Authentication.",
+        "evidence": "Authorization: Basic YWRtaW46UGFzc3dvcmQxMjM=",
+        "packet_summary": "HTTP POST /login HTTP/1.1 (Basic Auth present)"
+      },
+      {
+        "id": "pkt-win-002",
+        "timestamp": "2024-10-10T12:05:04",
+        "threat_type": "LLMNR_BROADCAST",
+        "protocol": "LLMNR",
+        "source_ip": "192.168.1.105",
+        "source_port": 5355,
+        "dest_ip": "224.0.0.252",
+        "dest_port": 5355,
+        "severity": "MEDIUM",
+        "description": "Link-Local Multicast Name Resolution (LLMNR) broadcast traffic active.",
+        "recommendation": "Disable LLMNR via Group Policy to prevent credential-relay attacks (Responder).",
+        "evidence": "LLMNR query for WPAD on 224.0.0.252:5355",
+        "packet_summary": "UDP 192.168.1.105:5355 -> 224.0.0.252:5355"
+      }
+    ]
+  }
+}

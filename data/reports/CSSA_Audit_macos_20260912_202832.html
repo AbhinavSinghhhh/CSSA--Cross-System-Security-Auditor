@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSA — Security Audit Report</title>
+    <style>
+        :root {
+            --bg-color: #1a1a2e;
+            --text-color: #eeeeee;
+            --card-bg: #16213e;
+            --primary: #0f3460;
+            --accent: #e94560;
+            --border: #0f3460;
+        }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 30px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 3px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        header h1 { margin: 0; color: #ffffff; font-size: 2.2em; }
+        header h2 { margin: 5px 0 15px; color: var(--accent); font-size: 1.4em; }
+        .meta-text { color: #aaaaaa; font-size: 0.9em; }
+        .section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        h2 { color: #ffffff; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-top: 0; }
+        h3 { color: #ffffff; }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 25px;
+            align-items: center;
+        }
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8em;
+            font-weight: bold;
+            margin: 0 auto;
+            border: 8px solid var(--accent);
+            background: rgba(0,0,0,0.2);
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .data-table th, .data-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .data-table th {
+            background-color: rgba(15, 52, 96, 0.6);
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .data-table tr:hover { background-color: rgba(255,255,255,0.03); }
+        .finding-card {
+            background-color: rgba(255,255,255,0.03);
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--accent);
+        }
+        .finding-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        .finding-header h3 { margin: 0; font-size: 1.15em; }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 6px;
+        }
+        .evidence-box {
+            background: #0f0f23;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #0f3460;
+            color: #a8d5e5;
+            font-size: 0.85em;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .diff-add { background-color: rgba(0, 200, 83, 0.1); color: #00C853; }
+        .diff-remove { background-color: rgba(255, 23, 68, 0.1); color: #FF1744; }
+        .diff-change { background-color: rgba(255, 214, 0, 0.1); color: #FFD600; }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85em;
+            color: #888888;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSSA</h1>
+            <h2>Cross-Platform System Security Audit</h2>
+            <p class="meta-text">Audit Timestamp: 2026-09-12T20:27:37.623598 | Generated: 2026-09-12 20:28:32</p>
+        </header>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <div class="grid-2">
+                <div style="text-align: center;">
+                    <div class="score-circle" style="border-color: #64DD17; color: #64DD17;">
+                        80
+                    </div>
+                    <h3 style="color: #64DD17; margin-top: 10px;">Good</h3>
+                    <p class="meta-text">Score: 80 / 100</p>
+                </div>
+                <div>
+                    <table class="data-table">
+                        <tr><th>Hostname</th><td>Abhinavs-MacBook-Air-7.local</td></tr>
+                        <tr><th>Operating System</th><td>macOS 26.6.2 26.6.2 (arm64)</td></tr>
+                        <tr><th>Audited User</th><td>abhinavsingh (Administrator)</td></tr>
+                        <tr><th>Audit Mode</th><td>REAL SYSTEM</td></tr>
+                        <tr><th>Total Findings</th><td>8 (0 Critical, 1 High, 1 Medium, 0 Low)</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Category Scores</h2>
+            <table class="data-table"><tr><th>Category</th><th>Score</th><th>Max</th><th>Findings</th><th>Critical</th><th>High</th><th>Medium</th><th>Low</th></tr><tr><td><strong>Filesystem</strong></td><td>88</td><td>100</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td><strong>Identity</strong></td><td>92</td><td>100</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td><strong>Network</strong></td><td>100</td><td>100</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td><strong>System</strong></td><td>100</td><td>100</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>
+        </div>
+
+        <div class="section">
+            <h2>Security Risks & Required Remediation</h2>
+            
+                <div class="finding-card" style="border-left-color: #FFD600;">
+                    <div class="finding-header">
+                        <h3>Too many admin users</h3>
+                        <div>
+                            <span class="badge" style="background-color: #FFD600; color: black;">MEDIUM</span>
+                            <span class="badge" style="background-color: #FF1744; color: black;">FAIL</span>
+                        </div>
+                    </div>
+                    <div class="finding-body">
+                        <p><strong>Rule ID:</strong> COM-002 | <strong>Category:</strong> Identity | <strong>Platform:</strong> macos</p>
+                        <p><strong>Description:</strong> There are too many administrator accounts on the system.</p>
+                        <p><strong>Rationale / Why it matters:</strong> Found 3 administrator accounts (threshold: 2).</p>
+                        <p><strong>Evidence:</strong> <pre class="evidence-box">Admin accounts: abhinavsingh, root, root</pre></p>
+                        <p><strong>Recommendation:</strong> Review and reduce the number of administrator accounts.</p>
+                    </div>
+                </div>
+                
+                <div class="finding-card" style="border-left-color: #FF6D00;">
+                    <div class="finding-header">
+                        <h3>Broad file permissions on sensitive path</h3>
+                        <div>
+                            <span class="badge" style="background-color: #FF6D00; color: black;">HIGH</span>
+                            <span class="badge" style="background-color: #FF1744; color: black;">FAIL</span>
+                        </div>
+                    </div>
+                    <div class="finding-body">
+                        <p><strong>Rule ID:</strong> MAC-005 | <strong>Category:</strong> Filesystem | <strong>Platform:</strong> macos</p>
+                        <p><strong>Description:</strong> System or configuration directories have world-writable permissions.</p>
+                        <p><strong>Rationale / Why it matters:</strong> 1 world-writable file(s) detected.</p>
+                        <p><strong>Evidence:</strong> <pre class="evidence-box">  /tmp (drwxrwxrwt) — Standard system permissions</pre></p>
+                        <p><strong>Recommendation:</strong> Review and correct file permissions using &#x27;chmod&#x27; or Finder Info.</p>
+                    </div>
+                </div>
+                
+        </div>
+
+        <div class="section">
+            <h2>Compliant Security Controls (Passed Checks)</h2>
+            <table class="data-table"><tr><th>Security Control / Check</th><th>Category</th><th>Status</th><th>Verification Evidence</th></tr><tr><td><strong>Host Firewall is enabled and active</strong></td><td>Network</td><td><span class="badge" style="background-color: #00C853; color: black;">PASS</span></td><td><code>Provider: macOS Application Firewall (socketfilterfw)</code></td></tr><tr><td><strong>No unauthorized open network ports</strong></td><td>Network</td><td><span class="badge" style="background-color: #00C853; color: black;">PASS</span></td><td><code>No services exposed on all interfaces.</code></td></tr><tr><td><strong>System Integrity Protection (SIP) is enabled</strong></td><td>System</td><td><span class="badge" style="background-color: #00C853; color: black;">PASS</span></td><td><code>SIP status: Enabled</code></td></tr><tr><td><strong>Gatekeeper application assessment is enabled</strong></td><td>System</td><td><span class="badge" style="background-color: #00C853; color: black;">PASS</span></td><td><code>Gatekeeper status: Enabled</code></td></tr><tr><td><strong>FileVault full-disk encryption is active</strong></td><td>System</td><td><span class="badge" style="background-color: #00C853; color: black;">PASS</span></td><td><code>FileVault status: Enabled</code></td></tr><tr><td><strong>Root SSH remote access is restricted</strong></td><td>Network</td><td><span class="badge" style="background-color: #00C853; color: black;">PASS</span></td><td><code>Root SSH login is disabled.</code></td></tr></table>
+        </div>
+
+        
+
+        <div class="section">
+            <h2>Audit Limitations</h2>
+            <p>This audit is subject to the following technical and operational constraints:</p>
+            <ul>
+                <li><strong>Read-Only Inspection:</strong> Auditing was conducted in a strictly non-destructive, read-only manner. No system changes, service terminations, or configuration overrides were performed.</li>
+                <li><strong>Privilege Boundaries:</strong> Certain system metrics, restricted service statuses, or protected configuration files may be marked as <em>UNAVAILABLE</em> if executed without administrative or root privileges.</li>
+                <li><strong>Heuristic Indicators:</strong> Findings regarding processes, ports, and startup entries represent configuration heuristics and anomalies for review, not definitive declarations of malicious software.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Disclaimer</h2>
+            <p>This report is generated by CSSA (Cross-Platform System Security Auditor) for defensive academic and internal auditing purposes only. Findings should be reviewed in the context of your organization's security policy and operational requirements before applying manual remediations. The developers assume no liability for actions taken based on this report.</p>
+        </div>
+
+        <div class="footer">
+            <p>CSSA — Cross-Platform System Security Auditor &bull; Built with Python &bull; Defensive Host Security</p>
+        </div>
+    </div>
+</body>
+</html>

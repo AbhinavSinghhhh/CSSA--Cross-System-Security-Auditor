@@ -1,0 +1,128 @@
+{
+  "system_info": {
+    "os_name": "macOS 14.5 (Sonoma)",
+    "os_version": "14.5",
+    "kernel_version": "Darwin 23.5.0",
+    "architecture": "arm64",
+    "hostname": "MacBook-Demo.local",
+    "current_user": "student",
+    "privilege_level": "Administrator",
+    "uptime": "5d 12h 18m",
+    "boot_time": "2026-09-06T08:00:00",
+    "cpu_info": "Apple M2 Pro",
+    "cpu_count": 10,
+    "total_memory_gb": 16.0,
+    "available_memory_gb": 9.4,
+    "disk_total_gb": 512.0,
+    "disk_used_gb": 210.0,
+    "disk_free_gb": 302.0,
+    "platform": "macos"
+  },
+  "users": [
+    {
+      "username": "student",
+      "uid": "501",
+      "gid": "20",
+      "groups": ["staff", "admin", "everyone", "localaccounts"],
+      "is_admin": true,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "/Users/student",
+      "shell": "/bin/zsh",
+      "description": "Lab Student Account",
+      "last_login": "2026-09-11T09:15:00"
+    },
+    {
+      "username": "guest",
+      "uid": "201",
+      "gid": "201",
+      "groups": ["guest"],
+      "is_admin": false,
+      "is_disabled": false,
+      "is_guest": true,
+      "home_directory": "/Users/Guest",
+      "shell": "/bin/zsh",
+      "description": "Guest User",
+      "last_login": "Unavailable"
+    },
+    {
+      "username": "admin_backup",
+      "uid": "502",
+      "gid": "20",
+      "groups": ["staff", "admin"],
+      "is_admin": true,
+      "is_disabled": false,
+      "is_guest": false,
+      "home_directory": "/Users/admin_backup",
+      "shell": "/bin/zsh",
+      "description": "Extra Admin Account — review recommended",
+      "last_login": "2026-08-20T11:00:00"
+    }
+  ],
+  "processes": [
+    {"pid": 1, "name": "launchd", "exe_path": "/sbin/launchd", "cpu_percent": 0.1, "memory_percent": 0.2, "memory_mb": 40.0, "parent_pid": 0, "username": "root", "start_time": "2026-09-06T08:00:00", "status": "running", "cmdline": "/sbin/launchd"},
+    {"pid": 340, "name": "WindowServer", "exe_path": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer", "cpu_percent": 4.5, "memory_percent": 3.2, "memory_mb": 512.0, "parent_pid": 1, "username": "_windowserver", "start_time": "2026-09-06T08:00:05", "status": "running", "cmdline": "WindowServer -daemon"},
+    {"pid": 890, "name": "mysqld", "exe_path": "/opt/homebrew/bin/mysqld", "cpu_percent": 1.2, "memory_percent": 4.0, "memory_mb": 640.0, "parent_pid": 1, "username": "student", "start_time": "2026-09-06T08:05:00", "status": "running", "cmdline": "mysqld --defaults-file=/opt/homebrew/etc/my.cnf"},
+    {"pid": 1204, "name": "suspicious_helper", "exe_path": "/Users/student/Library/Application Support/helper/daemon", "cpu_percent": 88.0, "memory_percent": 15.0, "memory_mb": 2400.0, "parent_pid": 1, "username": "student", "start_time": "2026-09-11T10:00:00", "status": "running", "cmdline": "suspicious_helper --background"}
+  ],
+  "services": [
+    {"name": "com.openssh.sshd", "display_name": "Remote Login (SSH)", "status": "Running", "startup_type": "Automatic", "description": "OpenSSH server daemon", "executable": "/usr/sbin/sshd", "user": "root"},
+    {"name": "homebrew.mxcl.mysql", "display_name": "MySQL Service", "status": "Running", "startup_type": "Automatic", "description": "MySQL community database", "executable": "/opt/homebrew/bin/mysqld", "user": "student"},
+    {"name": "com.apple.alf", "display_name": "Application Firewall", "status": "Stopped", "startup_type": "Disabled", "description": "macOS Application Firewall daemon", "executable": "/usr/libexec/ApplicationFirewall/socketfilterfw", "user": "root"}
+  ],
+  "firewall": {
+    "enabled": false,
+    "provider": "macOS Application Firewall (socketfilterfw)",
+    "profiles": {"global": false},
+    "rules_count": 0,
+    "details": "Application Firewall is disabled in System Settings"
+  },
+  "network_connections": [
+    {"local_address": "0.0.0.0", "local_port": 22, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 450, "process_name": "sshd", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "0.0.0.0", "local_port": 3306, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 890, "process_name": "mysqld", "exposure": "NETWORK EXPOSED"},
+    {"local_address": "127.0.0.1", "local_port": 6379, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 900, "process_name": "redis-server", "exposure": "LOCAL ONLY"},
+    {"local_address": "0.0.0.0", "local_port": 5900, "protocol": "TCP", "remote_address": "", "remote_port": 0, "state": "LISTEN", "pid": 600, "process_name": "screensharingd", "exposure": "NETWORK EXPOSED"}
+  ],
+  "file_permissions": [
+    {"path": "/etc/passwd", "owner": "root", "group": "wheel", "permissions": "rw-r--r--", "numeric_mode": "644", "is_suid": false, "is_sgid": false, "is_world_writable": false, "risk": "LOW", "reason": "Standard permissions", "acl_entries": []},
+    {"path": "/Library/Preferences/SystemConfiguration/preferences.plist", "owner": "root", "group": "admin", "permissions": "rwxrwxrwx", "numeric_mode": "777", "is_suid": false, "is_sgid": false, "is_world_writable": true, "risk": "HIGH", "reason": "Network configuration plist is world-writable", "acl_entries": []}
+  ],
+  "startup_entries": [
+    {"name": "com.apple.launchd.periodic", "location": "/Library/LaunchDaemons", "command": "/usr/libexec/periodic-wrapper daily", "user": "root", "enabled": true, "source": "launchd", "risk": "LOW", "description": "System maintenance tasks"},
+    {"name": "com.suspicious.helper.plist", "location": "/Users/student/Library/LaunchAgents", "command": "/Users/student/Library/Application Support/helper/daemon", "user": "student", "enabled": true, "source": "launchd user agent", "risk": "HIGH", "description": "Unknown user LaunchAgent executing unverified background daemon"}
+  ],
+  "security_policies": [
+    {"name": "System Integrity Protection (SIP)", "category": "Kernel & System Integrity", "current_value": "Enabled", "recommended_value": "Enabled", "compliant": true, "description": "Rootless protection of system directories"},
+    {"name": "Gatekeeper Assessment", "category": "Application Security", "current_value": "Disabled", "recommended_value": "Enabled", "compliant": false, "description": "Enforces developer code signing verification"},
+    {"name": "FileVault Encryption", "category": "Data Protection", "current_value": "Disabled", "recommended_value": "Enabled", "compliant": false, "description": "Full disk encryption on startup volume"}
+  ],
+  "packet_capture": {
+    "capture_available": true,
+    "capture_source": "Demo Fixture (Wireshark Capture)",
+    "duration_seconds": 10,
+    "total_packets_captured": 75,
+    "details": "Simulated live packet capture stream for macOS endpoint.",
+    "protocols_seen": {
+      "TCP": 50,
+      "UDP": 15,
+      "HTTP": 10
+    },
+    "threats": [
+      {
+        "id": "pkt-mac-001",
+        "timestamp": "2024-10-10T15:20:01",
+        "threat_type": "CLEARTEXT_PROTOCOL",
+        "protocol": "HTTP",
+        "source_ip": "192.168.1.55",
+        "source_port": 50123,
+        "dest_ip": "93.184.216.34",
+        "dest_port": 80,
+        "severity": "HIGH",
+        "description": "Unencrypted HTTP web traffic observed without TLS encapsulation.",
+        "recommendation": "Enforce HTTPS with HSTS headers.",
+        "evidence": "GET /insecure/api HTTP/1.1 observed on port 80",
+        "packet_summary": "TCP 192.168.1.55:50123 -> 93.184.216.34:80"
+      }
+    ]
+  }
+}
